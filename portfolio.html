@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shouraim - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: cursive;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 30px;
+            background-color: black;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: maroon;
+            font-size: 1.2rem;
+        }
+
+        main hr {
+            border: 0;
+            background: rgb(1, 1, 24);
+            height: 1.2rem;
+            margin: 60px 84px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 130px 0;
+        }
+
+        .firstSection > div {
+            width: 30%;
+        }
+
+        .leftSection {
+            font-size: 2rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .leftSection .btn {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 12px;
+            background-color: rgb(0, 0, 20);
+            color: white;
+            border: 2px solid white;
+            border-radius: 6px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .leftSection .button {
+            padding: 50px 0;
+        }
+
+        .rightSection img {
+            width: 100%;
+            margin: 20px 0;
+            margin-left: 30px;
+        }
+
+        .purple {
+            color: white;
+        }
+
+        #element {
+            color: white;
+            font-size: 3rem;
+            font-family: cursive;
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .secondSection h3 {
+            font-size: 2.5rem;  /* Increase font size */
+            font-weight: bold;  /* Make the text bold */
+            color: rgb(116, 17, 17);  /* Apply a custom color */
+            text-align: center;  /* Center the text */
+            background-color: rgba(255, 255, 255, 0.1);  /* Optional: Add subtle background */
+            padding: 10px;  /* Add padding */
+            border-radius: 8px;  /* Optional: Add rounded corners */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* Optional: Shadow effect */
+        }
+
+        .text-gray {
+            color: gray;
+        }
+
+        .secondSection .box {
+            background: white;
+            width: 77vw;
+            height: 2px;
+            margin: 56px 0;
+            display: flex;
+        }
+
+        .secondSection .vertical {
+            height: 93px;
+            width: 1px;
+            background-color: white;
+            margin: 0 120px;
+        }
+
+        .vertical-title {
+            position: relative;
+            top: 75px;
+            width: 150px;
+            font-size: 14px;
+        }
+
+        .vertical-desc {
+            position: relative;
+            top: 86px;
+            color: gray;
+            width: 150px;
+            font-size: 9px;
+        }
+
+        .image-top {
+            width: 30px;
+            position: relative;
+            top: -32px;
+            left: -9px;
+        }
+
+        .footer {
+            background: #0e0e1a;
+            display: flex;
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer-first, .footer-second, .footer-third {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer > div {
+            width: 223px;
+        }
+
+        .footer-rights {
+            font-family: monospace;
+            text-align: center;
+            color: gray;
+            padding: 12px 0;
+        }
+
+        :root {
+            --color-primary: rgb(116, 17, 17);
+        }
+
+        .wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+            -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+            padding: 40px 30px;
+            border-radius: 10px;
+        }
+
+        .wrapper h3 {
+            font-size: 1.7rem;
+            text-align: center;
+        }
+
+        .skills-wrapper {
+            padding: 0 20px;
+        }
+
+        .skills-wrapper .bar {
+            margin: 20px 0;
+        }
+
+        .skills-wrapper .bar .info {
+            margin-bottom: 10px;
+        }
+
+        .skills-wrapper .bar .info span {
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .skills-wrapper .bar .progress-bar {
+            width: 100%;
+            height: 15px;
+            background-color: #dddddd;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-wrapper .bar .progress-bar span {
+            position: absolute;
+            height: 100%;
+            border-radius: 10px;
+            transform: scale(0);
+            background-color: var(--color-primary);
+            animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+        }
+
+        @keyframes animate {
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .skills-wrapper .bar .progress-bar span.html {
+            width: 75%; /* Adjusted to 75% for HTML */
+        }
+
+        .skills-wrapper .bar .progress-bar span.css {
+            width: 60%; /* Adjusted to 60% for CSS */
+        }
+
+        .skills-wrapper .bar .progress-bar span.javascript {
+            width: 40%; /* Adjusted to 40% for JavaScript */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Shouraim's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="portfolio.html">Home</a></li>
+                    <li><a href="about me.html">About Me</a></li>
+                    <li><a href="cerficates.html">Certifications</a></li>
+                    <li><a href="contact me.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="purple">Shouraim</span>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+                <div class="button">
+                    <a href="resume.pdf"><button class="btn">Download Resume</button></a>
+                    <a href="https://github.com/ShouraimAhmed"><button class="btn">Visit Github</button></a>
+                </div>
+            </div>
+            <div class="rightSection">
+                <img src="devloper2-removebg-preview.png" alt="Developer Image">
+            </div>
+        </section>
+        <section class="secondSection">
+            <span class="text-gray">What I have done so far</span>
+            <h3>My Skills</h3>
+            <div class="wrapper">
+                <div class="skills-wrapper">
+                    <div class="bar">
+                        <div class="info">
+                            <span>HTML</span>
+                        </div>
+                        <div class="progress-bar">
+                            <span class="html"></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <span>CSS</span>
+                        </div>
+                        <div class="progress-bar">
+                            <span class="css"></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="progress-bar">
+                            <span class="javascript"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Shouraim's Developer Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-rights">
+            &copy; shouraimsportolio.com | All rights reserved
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Software Dev'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+</html>
